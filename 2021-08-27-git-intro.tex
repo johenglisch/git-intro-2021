@@ -1,0 +1,334 @@
+\documentclass[12pt]{beamer}
+\mode<presentation>
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[british]{babel}
+
+\usepackage{lmodern}
+
+\title{Introduction to Git and Github}
+\author{Johannes Englisch}
+\date{27\,Aug 2021}
+
+
+\setbeamertemplate{background}{%
+  \includegraphics[width=\paperwidth,height=\paperheight]{images/bg-slide.jpg}%
+}
+
+\definecolor{shh-turquoise}{HTML}{08817F}
+\definecolor{shh-link}{HTML}{7F0881}
+\definecolor{shh-light-turquoise}{HTML}{A5DDD4}
+\definecolor{shh-grey}{HTML}{D8D8D8}
+
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{author}{fg=shh-grey}
+\setbeamercolor{date}{fg=shh-grey}
+
+%\setbeamercolor{titlelike}{fg=shh-turquoise}
+\setbeamercolor{structure}{fg=shh-turquoise}
+\setbeamercolor{section title}{fg=white}
+
+\setbeamercolor{alerted text}{fg=shh-turquoise}
+\setbeamercolor{navigation symbols}{fg=shh-turquoise}
+\setbeamercolor{navigation symbols dimmed}{fg=shh-light-turquoise}
+
+\AtBeginSection[]{%
+  {%
+    \setbeamertemplate{background}{%
+      \includegraphics[width=\paperwidth,height=\paperheight]{images/bg-caption.jpg}%
+    }%
+    \begin{frame}
+      \frametitle{}
+      {\Huge{}\usebeamercolor[fg]{title}\insertsection{}}
+    \end{frame}
+  }%
+}
+
+\hypersetup{
+  colorlinks,%
+  linkcolor=,%
+  urlcolor=shh-link,%
+}
+
+
+\begin{document}
+
+{%
+  \setbeamertemplate{background}{%
+    \includegraphics[width=\paperwidth,height=\paperheight]{images/title.jpg}%
+  }%
+  \setbeamercolor{navigation symbols}{fg=shh-grey}%
+  \setbeamercolor{navigation symbols dimmed}{fg=shh-light-turquoise}%
+  \begin{frame}
+    \titlepage%
+  \end{frame}%
+}
+
+\section{What is Git?}
+
+\begin{frame}
+  \frametitle{Buzzword collection}
+
+  Git is a~\alert{Distributed Version Control System} (DVCS).
+\end{frame}
+
+\begin{frame}
+  \frametitle{Version control}
+
+  A~\alert{Version Control System} (VCS) keeps track of different versions of
+  a project.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Two meanings of `version'}
+
+  \begin{block}{Meaning 1}
+    `Version' as in the state of a~project at a~given point in time.\\
+    $\rightarrow$ i.\,e.\ `old version' vs.\ `new version'
+    % TODO Illustration: Evolution of Firefox?
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Two meanings of `version' (ctd.)}
+
+  \begin{block}{Meaning 2}
+    `Version' as in different editions of the same project, existing next to
+    each other.\\
+    $\rightarrow$ e.\,g.\ `home version' vs.\ `enterprise version'
+    % TODO Illustration: Firefox Rapid Release vs Firefox ESR?
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Two meanings of `version' (ctd.)}
+
+  Version Control Systems do both!
+  % TODO Illustration: Git tree
+\end{frame}
+
+\begin{frame}
+  \frametitle{What can VCS's be used for?}
+
+  \begin{itemize}
+    \item Programming
+    \item Configuration files
+    \item Writing an article together in \LaTeX, Markdown, etc.
+    \item \alert{Reproducible and citable research data}\\
+      (we like that around here)
+    \item Personal todo lists, notes, etc.
+    \item These slides \texttt{;)}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Know thy limits!}
+
+  \begin{block}{What are VCS's good at?}
+    Text-based data
+    (plain-text files, program code, XML/HTML, \LaTeX, CSV tables, etc.)
+  \end{block}
+
+  \begin{block}{What are (most) VCS's bad at?}
+    Binary data
+    (images, audio files, pdfs, zip archives, etc.)
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Centralised vs.\ Distributed VCS}
+
+  \begin{block}{Centralised Version Control (e.\,g.\ CVS, subversion)}
+    \begin{itemize}
+      \item Central repository on some server somewhere
+      \item People download the current state of the project to their computers
+      \item People upload any changes they made back onto the server
+    \end{itemize}
+    % TODO Illustration: centralised VCS
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Centralised vs.\ Distributed VCS (ctd.)}
+
+  \begin{block}{Distributed Version Control}
+    \begin{itemize}
+      \item Everybody has a~complete copy of the project (and all its history)
+        on their hard drives
+      \item Changes are pushed and pulled between the different repositories
+    \end{itemize}
+    % TODO Illustration: distributed VCS
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Centralised vs.\ Distributed VCS (ctd.)}
+
+  \begin{block}{Note}
+    In reality, people put a~separate copy of the project on a~server somewhere
+    and pull/push their changes through that.
+    \begin{itemize}
+      \item Some project spin up their own git servers, e.\,g.:
+        \begin{itemize}
+          \item \href{https://git.kernel.org/}{Linux kernel$^{\hookrightarrow}$}
+          \item \href{https://savannah.gnu.org/}{GNU operating system$^{\hookrightarrow}$}
+        \end{itemize}
+      \item Others use third-party hosting sites:
+        \begin{itemize}
+          \item \href{https://github.com}{Microsoft's Github$^{\hookrightarrow}$}
+            (most popular)
+          \item \href{https://bitbucket.org}{Atlassian's Bitbucket$^{\hookrightarrow}$}
+          \item \href{https://about.gitlab.com}{Gitlab$^{\hookrightarrow}$}
+        \end{itemize}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Know thy limits! (ctd.)}
+
+  \begin{block}{Advantages of Distributed Version Control}
+    \begin{itemize}
+      \item No need for a~constant internet connection
+      \item Quick and comfy workflow (local branches are the best!)
+      \item The massive redundancy reduces the chance of data loss
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Drawbacks}
+    \begin{itemize}
+      \item Workflow of pulling/merging can be a~bit finicky at times.
+      \item Copies get out of sync with each other more easily, increasing the
+        number of merge conflicts.
+      \item Copying around the entire history wastes disk space and bandwidth,
+        and also just takes longer.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+% \begin{frame}
+%   \frametitle{Quick terminology dump}
+%
+%   \begin{itemize}
+%     \item \alert{Repository} (\emph{repo} or \emph{repos} for short):
+%       \begin{itemize}
+%         \item General tech speak:
+%           online storage space
+%         \item Git speak:
+%           a~copy of a~version-controlled project folder
+%       \end{itemize}
+%     \item \alert{Cloning}:
+%       downloading a~copy of an entire repo
+%     \item \alert{Commit}:
+%       a~single recorded change in a~project
+%     \item \alert{Pulling}:
+%       syncing commits \emph{from} a~remote git repo
+%     \item \alert{Pushing}:
+%       syncing commits \emph{to} a~remote git repo
+%     \item \alert{Pull Request} (PR):
+%       asking someone (kindly) to pull commits from your git repo into theirs
+%   \end{itemize}
+% \end{frame}
+
+\section{Exploring a git repo}
+
+\begin{frame}[fragile]
+  \frametitle{Cloning an existing repo}
+
+  {\footnotesize{}%
+    \begin{verbatim}
+$ git clone https://github.com/dictionaria/kalamang kalamang
+Cloning into 'kalamang'...
+remote: Enumerating objects: 155, done.
+remote: Counting objects: 100% (155/155), done.
+remote: Compressing objects: 100% (81/81), done.
+remote: Total 155 (delta 81), reused 139 (delta 68), pack-reused 0
+Receiving objects: 100% (155/155), 927.47 KiB | 7.73 MiB/s, done.
+Resolving deltas: 100% (81/81), done.
+    \end{verbatim}%
+  }
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Status report!}
+
+  {\footnotesize{}%
+    \begin{verbatim}
+$ cd kalamang
+$ git status
+On branch main
+Your branch is up-to-date with 'origin/main'.
+
+nothing to commit, working tree clean
+    \end{verbatim}%
+  }
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{History lesson}
+
+  {\footnotesize{}%
+    \begin{verbatim}
+$ git log
+commit 5f28ae268e88d70e2f5f9ca2497a7e8fed257611 (HEAD -> main, tag: v1.1, origin/main, origin/HEAD)
+Author: Robert Forkel <xrotwang@googlemail.com>
+Date:   Fri Apr 9 13:27:29 2021 +0200
+
+    re-compiled against Glottolog 4.3
+
+commit 3d98441885adb1037afcbde9478d8ae4c0330567
+Author: Johannes Englisch <englisch@shh.mpg.de>
+Date:   Wed Apr 7 14:41:57 2021 +0200
+
+    regen with current pydictionaria version
+[...]
+    \end{verbatim}%
+  }
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Time to time travel}
+
+  {\footnotesize{}%
+    \begin{verbatim}
+$ git checkout <commit/branch/tag>
+    \end{verbatim}
+  }
+\end{frame}
+
+\section{Managing your own git repo}
+
+\begin{frame}[fragile]
+  \frametitle{Creating a~new git repo}
+
+  {\footnotesize{}%
+    \begin{verbatim}
+$ cd <folder>
+$ git init
+Initialised empty Git repository in <folder>/.git
+    \end{verbatim}%
+  }
+\end{frame}
+
+% add + status + commit + status
+% gitignore
+% add + commit again
+% adding a tag?
+
+\section{Connecting to the world wide web}
+
+% register ssh key on github?
+% make slide repo
+% setup remote + pull
+% push
+
+% clone a separate version as proof
+
+% add + commit
+% push
+
+% fetch + merge
+
+\end{document}
