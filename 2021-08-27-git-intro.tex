@@ -401,11 +401,27 @@ $ git add file1 file2 [...]
 \begin{frame}[fragile]
   \frametitle{Time for some commitment}
 
-  {\footnotesize{}%
-    \begin{verbatim}
-$ git commit -m "helpful commit message :D"
-    \end{verbatim}%
-  }
+  \begin{block}{Short version}
+    {\footnotesize{}%
+      \begin{verbatim}
+$ git commit -m "short, yet helpful commit message :D"
+      \end{verbatim}%
+    }
+  \end{block}
+
+  \begin{block}{`Proper' version}
+    {\footnotesize{}%
+      \begin{verbatim}
+$ git commit
+      \end{verbatim}%
+    }
+  \end{block}
+
+  The latter will open a~text editor for you commit message:
+  \begin{itemize}
+    \item Save$+$quit to create the commit.
+    \item Quit without saving to abort the commit.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
