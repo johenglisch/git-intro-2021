@@ -7,6 +7,7 @@
 \usepackage[british]{babel}
 
 \usepackage{lmodern}
+\usepackage[normalem]{ulem}
 
 \title{Introduction to Git and Github}
 \author{Johannes Englisch}
@@ -438,6 +439,29 @@ $ git commit
       \par%
     }
   \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Good and helpful commit messages (ctd.)}
+
+  % TODO illustration of a good commit message
+  % (the repo for git itself looks pretty good)
+\end{frame}
+
+\begin{frame}
+  \frametitle{Good and helpful commit messages (ctd.)}
+
+  \begin{block}{Good one-liners}
+    A~good technique for a~one-line commit message is to focus more on
+    \alert{why} a~commit was made.\\
+  \end{block}
+
+  \begin{block}{Example}
+    \begin{tabular}{@{}ll@{}}
+      don't: & \sout{\texttt{updated readme}} \\
+      do:    & \texttt{forgot Steve in the author listing} \\
+    \end{tabular}
+  \end{block}
 \end{frame}
 
 % add + status + commit + status
