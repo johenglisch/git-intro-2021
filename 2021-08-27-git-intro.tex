@@ -400,6 +400,26 @@ Initialised empty Git repository in <folder>/.git
   }
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Reviewing your changes}
+
+  \begin{block}{What files changed since the last commit?}
+    {\footnotesize{}%
+      \begin{verbatim}
+$ git status
+      \end{verbatim}%
+    }
+  \end{block}
+
+  \begin{block}{What lines changed since the last commit?}
+    {\footnotesize{}%
+      \begin{verbatim}
+$ git diff
+      \end{verbatim}%
+    }
+  \end{block}
+\end{frame}
+
 \begin{frame}
   \frametitle{Making a~commit is a two-step process}
 
@@ -481,26 +501,6 @@ $ git commit
       don't: & \sout{\texttt{updated readme}} \\
       do:    & \texttt{forgot Steve in the author listing} \\
     \end{tabular}
-  \end{block}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Reviewing your changes}
-
-  \begin{block}{What files changed since the last commit?}
-    {\footnotesize{}%
-      \begin{verbatim}
-$ git status
-      \end{verbatim}%
-    }
-  \end{block}
-
-  \begin{block}{What lines changed since the last commit?}
-    {\footnotesize{}%
-      \begin{verbatim}
-$ git diff
-      \end{verbatim}%
-    }
   \end{block}
 \end{frame}
 
