@@ -119,7 +119,9 @@
   \begin{block}{Meaning 1}
     `Version' as in the state of a~project at a~given point in time.\\
     $\rightarrow$ i.\,e.\ `old version' vs.\ `new version'
-    % TODO Illustration: Evolution of Firefox?
+    \begin{center}
+      \includegraphics[width=.75\textwidth]{images/versions-over-time.jpg}
+    \end{center}
   \end{block}
 \end{frame}
 
@@ -127,18 +129,22 @@
   \frametitle{Two meanings of `version' (ctd.)}
 
   \begin{block}{Meaning 2}
-    `Version' as in different editions of the same project, existing next to
-    each other.\\
-    $\rightarrow$ e.\,g.\ `home version' vs.\ `enterprise version'
-    % TODO Illustration: Firefox Rapid Release vs Firefox ESR?
+    `Version' as in different alternative editions of the same project, existing
+    next to each other.\\
+    $\to$ `regular version' vs.\ `evil alternate universe'
+    \begin{center}
+      \includegraphics[width=.65\textwidth]{images/versions-parallel.jpg}
+    \end{center}
   \end{block}
 \end{frame}
 
 \begin{frame}
   \frametitle{Two meanings of `version' (ctd.)}
 
-  Version Control Systems do both!
-  % TODO Illustration: Git tree
+  Version Control Systems do both!\\
+  \begin{center}
+    \includegraphics[width=.5\textwidth]{images/terminology.jpg}
+  \end{center}
 \end{frame}
 
 \begin{frame}
@@ -170,28 +176,32 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Centralised vs.\ Distributed VCS}
+  \frametitle{Centralised vs.\ Distributed VCS }
 
-  \begin{block}{Centralised Version Control (e.\,g.\ CVS, subversion)}
-    \begin{itemize}
-      \item Central repository on some server somewhere.
-      \item People download the current state of the project to their computers.
-      \item People upload any changes they made back onto the server.
-    \end{itemize}
-    % TODO Illustration: centralised VCS
-  \end{block}
+    \centering{%
+      \includegraphics[width=.5\textwidth]{images/centralised-vcs.jpg}%
+    }
+    \begin{block}{Centralised VCS (e.\,g.\ CVS, subversion)}
+      \begin{itemize}
+        \item Central repository on some server somewhere.
+        \item People download the current state of the project to their computers.
+        \item People upload any changes they made back onto the server.
+      \end{itemize}
+    \end{block}
 \end{frame}
 
 \begin{frame}
   \frametitle{Centralised vs.\ Distributed VCS (ctd.)}
 
-  \begin{block}{Distributed Version Control}
+  \begin{center}
+    \includegraphics[width=.5\textwidth]{images/distributed-vcs.jpg}%
+  \end{center}
+  \begin{block}{Distributed Version Control (e.\,g.\ git, mercurial)}
     \begin{itemize}
       \item Everybody has a~complete copy of the project (and all its history)
         on their hard drives.
       \item Changes are pushed and pulled between the different repositories.
     \end{itemize}
-    % TODO Illustration: distributed VCS
   \end{block}
 \end{frame}
 
@@ -382,13 +392,15 @@ Initialised empty Git repository in <folder>/.git
 \end{frame}
 
 \begin{frame}
-  \frametitle{Changing a~project is a~two-step process}
+  \frametitle{Making a~commit is a two-step process}
 
+  \begin{center}
+    \includegraphics[width=.75\textwidth]{images/staging.jpg}%
+  \end{center}
   \begin{enumerate}
-    \item\alert{Add} all the changes you want to make to the Staging Area.
-    \item\alert{Commit} to your changes (and leave a~Commit Message).
+    \item\alert{Add} changes to the Staging Area.
+    \item\alert{Commit} to these changes (and leave a~commit message).
   \end{enumerate}
-  % TODO Illustration: commit process
 \end{frame}
 
 \begin{frame}[fragile]
@@ -444,8 +456,9 @@ $ git commit
 \begin{frame}
   \frametitle{Good and helpful commit messages (ctd.)}
 
-  % TODO illustration of a good commit message
-  % (the repo for git itself looks pretty good)
+  \begin{center}
+    \includegraphics[width=\textwidth]{images/good-commit-message.png}
+  \end{center}
 \end{frame}
 
 \begin{frame}
