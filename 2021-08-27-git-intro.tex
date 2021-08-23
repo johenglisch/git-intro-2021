@@ -504,9 +504,43 @@ $ git commit
   \end{block}
 \end{frame}
 
-% add + status + commit + status
+\begin{frame}[fragile]
+  \frametitle{Changing your mind}
+
+  \begin{block}{I'm not ready to commit to this yet!}
+    {\footnotesize{}%
+      \begin{verbatim}
+$ git reset file.txt
+      \end{verbatim}%
+    }
+    Note: This does \alert{not delete or change} any files -- it just removes
+    them from the Staging Area.
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Changing your mind (ctd.)}
+
+  \begin{block}%
+    {%
+      Crap, I~messed around with the project and now everything is terrible!
+      Let's just throw this away and start over\dots{}%
+    }
+    {\footnotesize{}%
+      \begin{verbatim}
+$ git checkout file.txt
+      \end{verbatim}%
+    }
+    \begin{itemize}
+      \item This will undo any changes to \texttt{file.txt} that haven't been
+        \alert{committed or staged}, yet.
+      \item This process is \alert{irreversible} -- tread with caution!
+      \item Yes, \texttt{checkout} serves double-duty\dots{}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
 % gitignore
-% add + commit again (checkout, reset)
 % adding a tag?
 
 
