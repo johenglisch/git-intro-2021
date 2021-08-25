@@ -330,6 +330,30 @@ $ ...
   \end{block}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{First setup (ctd.)}
+
+  \begin{block}{Avoid potential headache regarding line endings}
+    \begin{itemize}
+      \item Windows: \\{}
+        {\footnotesize{}\verb"$ git config --global core.autocrlf true"}
+      \item GNU/Linux, *BSD, macOS, etc.:\\{}
+        {\footnotesize{}\verb"$ git config --global core.autocrlf input"}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{First setup (ctd.)}
+
+  \begin{block}{Review your settings}
+    {\footnotesize{}%
+      \begin{verbatim}
+$ git config -l
+      \end{verbatim}%
+    }
+  \end{block}
+\end{frame}
 
 \section{Exploring a git repo}
 
