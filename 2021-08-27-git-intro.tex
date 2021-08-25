@@ -672,6 +672,29 @@ $ git checkout file.txt
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Secure Shell (SSH)}
+
+  \begin{block}{Create a~key pair (if you don't have one yet)}
+    {\footnotesize{}%
+      \begin{verbatim}
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+      \end{verbatim}
+    }
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Secure Shell (ctd.)}
+
+  \begin{block}{Find your public key}
+    \centering{%
+      \includegraphics[width=.75\textwidth]{images/ssh-keys.jpg}%
+    }
+  \end{block}
+\end{frame}
+
 % register ssh key on github?
 % make slide repo
 % setup remote + pull
