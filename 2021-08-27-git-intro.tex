@@ -851,6 +851,8 @@ stuff in the merged branch
 $ ssh-keygen -t ed25519 -C "your_email@example.com"
       \end{verbatim}
     }
+    $\to$ see \href{https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent}%
+    {Github's documentation on creating an SSH key$^{\hookrightarrow}$}
   \end{block}
 
 \end{frame}
@@ -871,7 +873,12 @@ $ ssh-keygen -t ed25519 -C "your_email@example.com"
   \begin{block}{Give your public key to Github}
     \centering{%
       \includegraphics[width=.75\textwidth]{images/add-ssh-key.png}%
-    }
+    }%
+    \begin{itemize}
+      \item Copy the contents of your public key file into the text field.
+      \item See \href{https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account}%
+    {Github's documentation on adding an SSH key}
+    \end{itemize}
   \end{block}
 \end{frame}
 
