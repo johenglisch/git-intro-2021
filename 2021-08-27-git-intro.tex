@@ -296,6 +296,29 @@
 \end{frame}
 
 \begin{frame}[fragile]
+  \frametitle{User interface}
+
+  \begin{itemize}
+    \item Git uses a~command-line interface
+    \item There are graphical interfaces and editor plugins for common tasks,
+      but at the end of the day the command-line is the preferred way to use git
+  \end{itemize}
+  {\footnotesize{}%
+    \begin{verbatim}
+$ git
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+[...]
+    \end{verbatim}
+  }
+\end{frame}
+
+\begin{frame}[fragile]
   \frametitle{First setup}
 
   \begin{block}{Tell git your name and email address}
