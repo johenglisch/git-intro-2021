@@ -728,6 +728,28 @@ $ ssh-keygen -t ed25519 -C "your_email@example.com"
   \end{block}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Creating a~new repo on Github}
+
+  \centering{%
+    \includegraphics[width=.5\textwidth]{images/new-repo.png}%
+  }
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Cloning a~git repo over SSH}
+
+  \begin{itemize}
+    \item Cloning over SSH requires a~different URL than regular cloning:\\
+      {\footnotesize{}\verb"git@github.com:<user name>/<repo name>"}
+  \end{itemize}
+  {\footnotesize{}%
+    \begin{verbatim}
+$ git clone git@github.com:johenglisch/2021-git-intro
+    \end{verbatim}%
+  }
+\end{frame}
+
 % register ssh key on github?
 % make slide repo
 % setup remote + pull
