@@ -728,14 +728,6 @@ $ ssh-keygen -t ed25519 -C "your_email@example.com"
   \end{block}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Creating a~new repo on Github}
-
-  \centering{%
-    \includegraphics[width=.5\textwidth]{images/new-repo.png}%
-  }
-\end{frame}
-
 \begin{frame}[fragile]
   \frametitle{Cloning a~git repo over SSH}
 
@@ -745,9 +737,44 @@ $ ssh-keygen -t ed25519 -C "your_email@example.com"
   \end{itemize}
   {\footnotesize{}%
     \begin{verbatim}
-$ git clone git@github.com:johenglisch/2021-git-intro
+$ git clone git@github.com:johenglisch/git-intro-2021
     \end{verbatim}%
   }
+\end{frame}
+
+\begin{frame}
+  \frametitle{Creating a~new repo on Github}
+
+  \centering{%
+    \includegraphics[width=.5\textwidth]{images/new-repo.png}%
+  }
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Hooking your local git repo up with Github}
+
+  {\footnotesize{}%
+    \begin{verbatim}
+$ git remote add origin \
+    git@github.com:johenglisch/git-intro-2021
+    \end{verbatim}%
+  }
+  \begin{itemize}
+    \item This connects your \alert{local} git repo to a~\alert{remote} repo
+    \item Note that we are adding the SSH URL rather than the regular HTTPS one
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Keeping the repos in sync}
+
+  \begin{block}{Uploading for the first time}
+    {\footnotesize{}%
+      \begin{verbatim}
+$ git push -u origin HEAD
+      \end{verbatim}%
+    }
+  \end{block}
 \end{frame}
 
 % register ssh key on github?
