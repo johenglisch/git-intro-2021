@@ -804,6 +804,18 @@ Fast-forward
 \end{frame}
 
 \begin{frame}[fragile]
+  \frametitle{I am a dirty liar \texttt{(<\_<)"}}
+
+  Actually, \texttt{git pull} does two things:
+  \begin{enumerate}
+    \item\texttt{git fetch}: Sync all branches from the remote repository.
+    \item\texttt{git merge}: Merge the remote version of the current branch
+      (e.\,g.\ \texttt{origin/main}) with the local version of the current
+      branch (e.\,g.\ \texttt{main})
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
   \frametitle{Keeping the repos in sync (ctd.)}
 
   \begin{block}{Upload new changes}
