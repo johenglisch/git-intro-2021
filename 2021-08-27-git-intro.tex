@@ -777,7 +777,51 @@ $ git push -u origin HEAD
   \end{block}
 \end{frame}
 
-% push, pull
-% fetch + merge
+\begin{frame}[fragile]
+  \frametitle{Keeping the repos in sync (ctd.)}
+
+  {\footnotesize{}%
+    \begin{verbatim}
+$ git pull
+remote: Enumerating objects: 364, done.
+remote: Counting objects: 100% (364/364), done.
+remote: Compressing objects: 100% (197/197), done.
+remote: Total 364 (delta 232), reused 256 (delta 127), pack-reused 0
+Receiving objects: 100% (364/364), 85.43 KiB | 4.07 MiB/s, done.
+Resolving deltas: 100% (232/232), completed with 19 local objects.
+From https://github.com/cldf/pycldf
+   61bfadd..275bb9f  master     -> origin/master
+ * [new tag]         v1.20.0    -> v1.20.0
+[...]
+ * [new tag]         v1.23.0    -> v1.23.0
+Updating 61bfadd..275bb9f
+Fast-forward
+ CHANGELOG.md                                         |  39 +
+ CONTRIBUTING.md                                      |  10 +-
+[...]
+    \end{verbatim}
+  }
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Keeping the repos in sync (ctd.)}
+
+  \begin{block}{Upload new changes}
+    {\footnotesize{}%
+      \begin{verbatim}
+$ git push
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 701 bytes | 350.00 KiB/s, done.
+Total 7 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), completed with 4 local objects.
+To github.com:johenglisch/git-intro-2021
+   e96bea1..a27e261  master -> master
+      \end{verbatim}%
+    }
+  \end{block}
+\end{frame}
 
 \end{document}
