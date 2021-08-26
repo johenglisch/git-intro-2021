@@ -646,7 +646,151 @@ $ git checkout file.txt
   \end{block}
 \end{frame}
 
-% adding a tag?
+
+\section{Casually making parallel universes}
+
+\begin{frame}
+  \frametitle{How branches work}
+
+  \centering{%
+    \includegraphics[width=\textwidth]{images/branches-1.jpg}%
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{How branches work (ctd.)}
+
+  \centering{%
+    \includegraphics[width=\textwidth]{images/branches-2.jpg}%
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{How branches work (ctd.)}
+
+  \centering{%
+    \includegraphics[width=\textwidth]{images/branches-3.jpg}%
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{How branches work (ctd.)}
+
+  \centering{%
+    \includegraphics[width=\textwidth]{images/branches-4.jpg}%
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{How branches work (ctd.)}
+
+  \centering{%
+    \includegraphics[width=\textwidth]{images/branches-5.jpg}%
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{How branches work (ctd.)}
+
+  \centering{%
+    \includegraphics[width=\textwidth]{images/branches-6.jpg}%
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{How branches work (ctd.)}
+
+  \centering{%
+    \includegraphics[width=\textwidth]{images/branches-7.jpg}%
+  }
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Relevant commands}
+
+  \begin{block}{Make new branch calles \texttt{alt-reality}}
+    {\footnotesize{}%
+      \begin{verbatim}
+$ git branch alt-reality
+      \end{verbatim}%
+    }
+  \end{block}
+
+  \begin{block}{Switch to branch}
+    {\footnotesize{}%
+      \begin{verbatim}
+$ git checkout alt-reality
+      \end{verbatim}%
+    }
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Relevant commands (ctd.)}
+
+  \begin{block}{Merge branches}
+    {\footnotesize{}%
+      \begin{verbatim}
+$ git branch main
+$ git merge alt-reality
+      \end{verbatim}%
+    }
+  \end{block}
+
+  \begin{block}{Remove the merged branch}
+    {\footnotesize{}%
+      \begin{verbatim}
+$ git branch -d alt-reality
+      \end{verbatim}%
+    }
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{How does merging work?}
+
+  \begin{block}{Best case scenario}
+    Git applies all the changes made in both branches to the project and
+    everybody is happy. \verb"\(^^)/"
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{How does merging work? (ctd.)}
+
+  \begin{block}{More annoying scenario}
+    {\footnotesize{}%
+      \begin{verbatim}
+$ git merge alt-reality
+Auto-merging test
+CONFLICT (content): Merge conflict in alt-reality
+Automatic merge failed; fix conflicts and then commit the result.
+      \end{verbatim}%
+    }
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{How does merging work? (ctd.)}
+
+  \begin{block}{What to do?}
+    \begin{itemize}
+      \item Look at \texttt{git status} to see which files are affected.
+      \item Manually edit the relevant files.
+      \item Especially look out for this pattern:
+        {\footnotesize{}%
+          \begin{verbatim}
+<<<<<<< HEAD
+stuff in the base branch
+=======
+stuff in the merged branch
+>>>>>>> alt-reality
+          \end{verbatim}%
+        }
+      \item\texttt{add} and \texttt{commit}
+    \end{itemize}
+  \end{block}
+\end{frame}
 
 
 \section{Publish your work on Github}
